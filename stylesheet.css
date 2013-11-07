@@ -1,0 +1,76 @@
+@font-face
+{
+    font-family: Source Sans Pro;
+    src: url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/ODelI1aHBYDBqgeIAH2zlBBHWFfxJXS04xYOz0jw624.woff);
+}
+
+@font-face
+{
+    font-family: Bitter-Regular;
+    src: url(http://themes.googleusercontent.com/static/fonts/bitter/v4/s9gJB935qk_YG8d-lnTdvA.woff);
+}
+ 
+p
+{
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+h1
+{
+    font-family: "Bitter-Regular", Georgia, serif;
+}
+
+#header
+{
+    display: block;
+    background-color: #d47618;
+    height: 230px;
+}
+
+#footer
+{
+    display: block;
+    background-color: #d47618;
+    clear: both;
+}
+
+#footer p
+{
+    color: white;
+    margin: auto;
+    height: 25px;
+    width: 857px;
+    padding: 50px;
+}
+
+#navbar
+{
+    background-color: #f7f5e7;
+    display: block;
+}
+
+#navbar a
+{
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    text-decoration: none;
+    color: #141412;
+    border: 1px solid black;
+    padding: 10px 20px 10px 20px;
+}
+
+#navbar a:hover
+{
+    background-color: 
+}
+
+.left
+{
+    float: left;
+    width: 65%;
+}
+
+.rigth
+{
+    width: 45%;
+    border: 1px solid black;
+}
