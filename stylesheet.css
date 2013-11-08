@@ -44,11 +44,8 @@ h1
     padding: 50px;
 }
 
-#navbar
+/*#navbar
 {
-    /*background-color: #f7f5e7;*/
-    /*background-color: black;*/
-    /*display: block;*/
     margin-left: 30px;
 }
 
@@ -60,7 +57,6 @@ h1
     padding: 10px 20px 10px 20px;
     display: inline-block;
     margin-right: -5px;
-    /*float: left;*/
 }
 
 #navbar a:hover
@@ -68,16 +64,62 @@ h1
     background-color: #141412;
     color: white;
 }
+*/
+
+.main
+{
+    border: 1px solid black;
+    display: inline-block;
+    margin: auto;
+}
 
 .left
 {
-    float: left;
-    width: 65%;
+    /*float: left;*/
+    width: 45%;
     margin-left: 30px;
+    border: 1px solid black;
+    display: inline-block;
 }
 
 .right
 {
     width: 30%;
-    float: right;
+    /*float: left;*/
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 160px;
+    display: inline-block;
+}
+
+nav
+{
+    margin-top: -16px;
+}
+
+nav ul
+{
+    list-style: none;
+}
+
+nav li
+{
+    display: inline;
+}
+
+nav li a
+{
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    text-decoration: none;
+    color: #141412;
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    margin-right: -5px;
+}
+
+nav li a:hover
+{
+    background-color: #141412;
+    color: white;
 }
