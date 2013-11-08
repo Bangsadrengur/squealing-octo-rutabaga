@@ -38,10 +38,9 @@ h1
 #footer p
 {
     color: white;
-    margin: auto;
     height: 25px;
-    width: 857px;
     padding: 50px;
+    text-align: center;
 }
 
 .left
