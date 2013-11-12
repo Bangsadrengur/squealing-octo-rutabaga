@@ -25,7 +25,37 @@ h1
     display: block;
     background-color: #d47618;
     height: 230px;
-    padding-left: 100px;
+}
+
+#logo
+{
+    height: 230px;
+    float: left;
+    position: relative;
+    left: 100px;
+}
+
+.cycle-slideshow
+{
+    float: right;
+}
+
+.cycle-slideshow img
+{
+    display: none;
+}
+
+.cycle-slideshow img.first
+{
+    display: block;
+}
+
+#header .cycle-slideshow img
+{
+    height: 200px;
+    margin: 10px 15px 20px 0;
+    border: 5px solid white;
+    border-radius: 5px;
 }
 
 #footer
