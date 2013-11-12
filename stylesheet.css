@@ -50,18 +50,29 @@ h1
     margin-left: 100px;
 }
 
+.left span
+{
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Palatino;
+}
+
 .right
 {
     width: 30%;
     float: left;
     padding-left: 30px;
     width: 200px;
+    background-color: rgba(247, 245, 231, 0.7);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 nav
 {
     margin-top: -16px;
-    margin-left: 100px;
+    padding-left: 100px;
+    background-color: #f7f5e7;
 }
 
 nav ul
