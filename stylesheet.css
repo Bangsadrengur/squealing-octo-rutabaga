@@ -15,7 +15,7 @@ p
     font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
-h1
+h1, h2
 {
     font-family: "Bitter-Regular", Georgia, serif;
 }
@@ -89,8 +89,8 @@ h1
 
 .left img
 {
-    width: 294px;
-    height: 300px;
+    width: 350px;
+    height: 357px;
     border: 1px solid white;
     border-radius: 5px;
     display: block;
