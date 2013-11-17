@@ -99,9 +99,26 @@ h1, h2, h3
     margin: 20px auto;
 }
 
+.left a
+{
+    text-decoration: none;
+    color: rgb(188, 54, 10);
+}
+
+.left a:hover
+{
+    text-decoration: underline;
+}
+
 #nam_byggist_a
 {
     margin-left: 20px;
+}
+
+.left ul li
+{
+    list-style: square;
+    line-height: 1.5;
 }
 
 .right
