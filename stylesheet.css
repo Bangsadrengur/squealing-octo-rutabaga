@@ -99,6 +99,11 @@ h1, h2, h3
     margin: 20px auto;
 }
 
+#nam_byggist_a
+{
+    margin-left: 20px;
+}
+
 .right
 {
     width: 30%;
