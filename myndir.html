@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <head>
     <meta charset="UTF-8">
-    <script src="jquery.min.js">
-    </script>
+    <script src="jquery.min.js"></script>
     <script src="jquery.cycle2.js"></script>
+    <script src="jquery.cycle2.center.min.js"></script>
     <link href="stylesheet.css" rel="stylesheet" type"text/css"/>
     <title>Suzukipíanóskólinn</title>
 </head>
@@ -21,24 +21,33 @@
     </a>
     <nav>
     <ul>
-        <li><a href="index.html"><span>Forsíða</span></a></li>
+        <li><a href="index.html">Forsíða</a></li>
         <li><a href="umsokn.html">Umsókn</a></li>
         <li><a href="um_skolann.html">Um skólann</a></li>
         <li><a href="fyrirkomulag_kennslu.html">Fyrirkomulag kennslu</a></li>
         <li><a href="suzukiadferdin.html">Suzukiaðferðin</a></li>
-        <li><a href="myndir.html">Myndir</a></li>
+        <li><a href="myndir.html"><span>Myndir</span></a></li>
     </ul>
     </nav>
-    <div class="left">
-        <h2>Velkomin á heimasíðu Suzukipíanóskólans</h2> 
-        <img id="frontpage-img" src="IMG_6551.jpg"/>
+    <div id="fyrri-mynd">
+        <strong>Fyrri mynd</strong>
     </div>
-    <div class="right">
-        <h3>Frístundakortið</h3>
-        <a href="http://reykjavik.is/thjonusta/fristundakortid">
-            <img src="fristundakortid_160.jpg"/>
-        </a>
-        <p>Suzukipíanóskólinn er aðili að Frístundakorti Reykjavíkur</p>
+    <div id="myndarammi">
+        <div class="cycle-slideshow" 
+            data-cycle-center-horz=true
+            data-cycle-center-vert=true
+            data-cycle-prev="#fyrri-mynd"
+            data-cycle-next="#naesta-mynd"
+            data-cycle-swipe=true
+            >
+            <img src="IMG_6716.jpg"/>
+            <img src="IMG_6551.jpg"/>
+            <img src="IMG_6702.jpg"/>
+            <img src="IMG_6666.jpg"/>
+        </div>
+    </div>
+    <div id="naesta-mynd">
+        <strong>Næsta mynd</strong>
     </div>
     <div id="footer">
         <p>Suzukipíanóskólinn - Langarima 21, 112 Reykjavík - Sími 8637963 - 

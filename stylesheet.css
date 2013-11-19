@@ -37,7 +37,7 @@ h1, h2, h3
     left: 100px;
 }
 
-.cycle-slideshow
+#header .cycle-slideshow
 {
     float: right;
 }
@@ -82,14 +82,7 @@ h1, h2, h3
     margin: 0 30px 20px 100px;
 }
 
-.left span
-{
-    font-weight: bold;
-    font-size: 30px;
-    font-family: Palatino;
-}
-
-.left img
+#frontpage-img
 {
     width: 323px;
     height: 330px;
@@ -174,4 +167,39 @@ html
 {
     max-width: 1000px;
     margin: auto;
+}
+
+#myndarammi
+{
+    height: 544px;
+    width: 748px;
+    float: left;
+}
+
+#myndarammi img
+{
+    max-height: 533px;
+    max-width: 748px;
+}
+
+#fyrri-mynd
+{
+    width: 100px;
+}
+
+#naesta-mynd
+{
+    width: 112px;
+}
+
+#fyrri-mynd, #naesta-mynd
+{
+    display: inline-block;
+    float: left;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    height: 544px;
+    line-height: 544px;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(188, 54, 10);
 }
