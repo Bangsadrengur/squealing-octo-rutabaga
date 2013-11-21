@@ -176,6 +176,12 @@ html
     float: left;
 }
 
+#myndarammi .cycle-slideshow
+{
+    height: 544px;
+    width: 748px;
+}
+
 #myndarammi img
 {
     max-height: 533px;
