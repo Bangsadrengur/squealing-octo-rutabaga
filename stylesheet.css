@@ -35,6 +35,9 @@ h1, h2, h3
     float: left;
     position: relative;
     left: 100px;
+    /* IE: Removes blue border around image links */
+    text-decoration: none;
+    border: 0px;
 }
 
 #header .cycle-slideshow
@@ -125,6 +128,13 @@ h1, h2, h3
     margin-bottom: 10px;
 }
 
+.right a img
+{
+    /* IE: Removes blue border around image links */
+    text-decoration: none;
+    border: 0px;
+}
+
 nav
 {
     margin-top: -16px;
@@ -209,3 +219,4 @@ html
     cursor: pointer;
     color: rgb(188, 54, 10);
 }
+
