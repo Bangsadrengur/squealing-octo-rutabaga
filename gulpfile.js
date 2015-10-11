@@ -9,8 +9,9 @@ gulp.task('html5-lint', function() {
     .pipe(html5Lint());
 });
 
-gulp.task('watch-html', function() {
-  gulp.watch('src/*.html', ['html5-lint']);
+gulp.task('watch-src', function() {
+  gulp.watch('src/**/*.js', ['js-to-dist']);
+  gulp.watch('src/**/*.html', ['html5-lint', 'html-to-dist']);
 });
 
 gulp.task('mithril', function() {
@@ -20,8 +21,13 @@ gulp.task('mithril', function() {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('srcToDist', function() {
-  gulp.src('./src/**')
+gulp.task('js-to-dist', function() {
+  gulp.src('./src/**/*.js')
+    .pipe(gulp.dest('./dist/js'));
+});
+
+gulp.task('html-to-dist', function() {
+  gulp.src('./src/**/*.html')
     .pipe(gulp.dest('./dist'));
 });
 
@@ -29,7 +35,8 @@ gulp.task('clean', function() {
   return del(['./dist']);
 });
 
-gulp.task('build', ['srcToDist', 'mithril']);
+gulp.task('build', ['js-to-dist', 'html-to-dist', 'mithril']);
+gulp.task('watch', ['watch-src']);
 
 gulp.task('default', function() {
 });

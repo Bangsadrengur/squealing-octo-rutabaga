@@ -6,7 +6,7 @@
   "scripts": {
     "start": "firefox dist/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch-html": "gulp watch-html",
+    "watch": "gulp watch",
     "dist": "gulp srcToDist",
     "clean": "gulp clean"
   },
