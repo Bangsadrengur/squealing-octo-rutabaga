@@ -8,8 +8,9 @@ gulp.task('html5-lint', function() {
 });
 
 gulp.task('watch-src', function() {
-  gulp.watch('src/**/*.js', ['js-to-dist']);
-  gulp.watch('src/**/*.html', ['html5-lint', 'html-to-dist']);
+  gulp.watch('src/js/*.js', ['js-to-dist']);
+  gulp.watch('src/css/*', ['css-to-dist']);
+  gulp.watch('src/*.html', ['html5-lint', 'html-to-dist']);
 });
 
 gulp.task('mithril', function() {
@@ -32,6 +33,16 @@ gulp.task('jquery-to-dist', function() {
     .pipe(gulp.dest('./dist/jquery'));
 });
 
+gulp.task('css-to-dist', function() {
+  gulp.src('./src/css/*')
+    .pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('images-to-dist', function() {
+  gulp.src('./src/images/*')
+    .pipe(gulp.dest('./dist/images'));
+});
+
 gulp.task('clean', function() {
   return del(['./dist']);
 });
@@ -40,6 +51,8 @@ gulp.task('build', [
   'js-to-dist',
   'html-to-dist',
   'jquery-to-dist',
+  'css-to-dist',
+  'images-to-dist',
   'mithril'
 ]);
 
