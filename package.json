@@ -4,7 +4,7 @@
   "description": "Code for suzukipianoskolinn.is",
   "main": "dist/index.html",
   "scripts": {
-    "start": "firefox dist/index.html",
+    "start": "firefox localhost:8080 && http-server dist/",
     "test": "karma start karma.conf.js",
     "watch": "gulp watch",
     "dist": "gulp build",
@@ -35,5 +35,8 @@
     "karma-jasmine": "^0.3.6",
     "mithril": "^0.2.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.8.5"
   }
 }

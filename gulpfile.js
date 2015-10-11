@@ -22,7 +22,7 @@ gulp.task('mithril', function() {
 });
 
 gulp.task('js-to-dist', function() {
-  gulp.src('./src/**/*.js')
+  gulp.src('./src/js/*.js')
     .pipe(gulp.dest('./dist/js'));
 });
 
@@ -31,11 +31,22 @@ gulp.task('html-to-dist', function() {
     .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('jquery-to-dist', function() {
+  gulp.src('./src/jquery/*.js')
+    .pipe(gulp.dest('./dist/jquery'));
+});
+
 gulp.task('clean', function() {
   return del(['./dist']);
 });
 
-gulp.task('build', ['js-to-dist', 'html-to-dist', 'mithril']);
+gulp.task('build', [
+  'js-to-dist',
+  'html-to-dist',
+  'jquery-to-dist',
+  'mithril'
+]);
+
 gulp.task('watch', ['watch-src']);
 
 gulp.task('default', function() {
