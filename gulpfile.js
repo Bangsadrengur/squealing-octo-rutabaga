@@ -18,7 +18,7 @@ gulp.task('mithril', function() {
   return browserify('./node_modules/mithril/mithril.min.js')
     .bundle()
     .pipe(source('mithril.min.js'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist/lib'));
 });
 
 gulp.task('js-to-dist', function() {
