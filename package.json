@@ -4,7 +4,7 @@
   "description": "Code for suzukipianoskolinn.is",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=express:* node index.js",
+    "start": "node index.js",
     "install": "gulp build",
     "start-local": "http-server dist/ > http-server.log &",
     "watch": "gulp watch",
@@ -31,7 +31,6 @@
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
     "gulp-html5-lint": "^1.0.1",
-    "http-server": "^0.8.5",
     "mithril": "^0.2.0"
   }
 }
