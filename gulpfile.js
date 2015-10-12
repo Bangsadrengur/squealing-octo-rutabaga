@@ -14,7 +14,12 @@ gulp.task('watch-src', function() {
 });
 
 gulp.task('mithril', function() {
-  gulp.src('./node_modules/mithril/mithril.min.js')
+  var mithrilPath = './node_modules/mithril';
+  gulp.src([
+    mithrilPath + '/mithril.min.js',
+    mithrilPath + '/mithril.min.js.map',
+    mithrilPath + '/mithril.js'
+    ])
     .pipe(gulp.dest('./dist/lib'));
 });
 

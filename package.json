@@ -4,7 +4,7 @@
   "description": "Code for suzukipianoskolinn.is",
   "main": "dist/index.html",
   "scripts": {
-    "start": "firefox localhost:8080 && http-server dist/",
+    "start": "http-server dist/",
     "watch": "gulp watch",
     "dist": "gulp build",
     "clean": "gulp clean"
