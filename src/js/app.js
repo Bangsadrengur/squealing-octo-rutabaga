@@ -1,4 +1,4 @@
-var home = {
+var Home = {
   view: function() {
     return m('div', [
       m('div[class="left"]', [
@@ -15,5 +15,3 @@ var home = {
     ]);
   }
 };
-
-m.mount(document.getElementById("content"), home);
