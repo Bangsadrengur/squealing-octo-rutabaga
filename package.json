@@ -4,7 +4,7 @@
   "description": "Code for suzukipianoskolinn.is",
   "main": "dist/index.html",
   "scripts": {
-    "start": "http-server dist/",
+    "start": "http-server dist/ -p $PORT",
     "start-local": "http-server dist/ > http-server.log &",
     "watch": "gulp watch",
     "dist": "gulp build",
