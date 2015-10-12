@@ -2,7 +2,7 @@
   "name": "suzukipianoskolinn",
   "version": "1.0.0",
   "description": "Code for suzukipianoskolinn.is",
-  "main": "dist/index.html",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "start-local": "http-server dist/ > http-server.log &",
