@@ -1,3 +1,17 @@
+// Widget for right side of screen displaying "Frístundakortið"
+var Right = {
+  view: function() {
+    return m('div[class="right"]', [
+      m('h3', 'Frístundakortið'),
+      m('a[href="http://reykjavik.is/thjonusta/fristundakortid"]', [
+        m('img', {src: "images/fristundakortid_160.jpg", alt: "Frístundakortið"})
+      ]),
+      m('p', 'Suzukipíanóskólinn er aðili að Frístundakorti Reykjavíkur')
+    ])
+  }
+};
+
+// Main content for greeter page
 var Home = {
   view: function() {
     return m('div', [
@@ -5,17 +19,12 @@ var Home = {
         m('h2', 'Velkomin á heimasíðu Suzukipíanóskólans'),
         m('img', {id: "frontpage-img", src: "images/IMG_6551.jpg", alt:"Mynd úr starfinu"})
       ]),
-      m('div[class="right"]', [
-        m('h3', 'Frístundakortið'),
-        m('a[href="http://reykjavik.is/thjonusta/fristundakortid"]', [
-          m('img', {src: "images/fristundakortid_160.jpg", alt: "Frístundakortið"})
-        ]),
-        m('p', 'Suzukipíanóskólinn er aðili að Frístundakorti Reykjavíkur')
-      ])
+      m.component(Right)
     ]);
   }
 };
 
+// Main content for application page
 var Umsokn = {
   view: function() {
     return m('div', [
@@ -40,13 +49,7 @@ var Umsokn = {
 	  'upplýsingar.'
 	])
       ]),
-      m('div[class="right"]', [
-        m('h3', 'Frístundakortið'),
-        m('a[href="http://reykjavik.is/thjonusta/fristundakortid"]', [
-          m('img', {src: "images/fristundakortid_160.jpg", alt: "Frístundakortið"})
-        ]),
-        m('p', 'Suzukipíanóskólinn er aðili að Frístundakorti Reykjavíkur')
-      ])
+      m.component(Right)
     ]);
   }
 };
