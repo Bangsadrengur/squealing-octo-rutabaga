@@ -4,7 +4,7 @@
   "description": "Code for suzukipianoskolinn.is",
   "main": "dist/index.html",
   "scripts": {
-    "start": "http-server dist/ -p $PORT",
+    "start": "node index.js",
     "start-local": "http-server dist/ > http-server.log &",
     "watch": "gulp watch",
     "dist": "gulp build",
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/Bangsadrengur/squealing-octo-rutabaga#readme",
   "dependencies": {
     "del": "^2.0.2",
+    "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
     "gulp-html5-lint": "^1.0.1",
