@@ -50,6 +50,43 @@ var Umsokn = {
 	])
       ]),
       m.component(Right)
-    ]);
+    ])
+  }
+};
+
+// Main content for info about school
+var UmSkolann = {
+  view: function() {
+    return m('div', [
+      m('div[class="left"]', [
+        m('h1', 'Um skólann'),
+	m('p', [
+          'Suzukipíanóskólinn var stofnaður árið 2009 af Elínu Hannesdóttur ',
+          'píanókennara.  Elín stundaði réttindanám Evrópska ',
+          'Suzukisambandsins, er einn af fyrstu Suzukipíanókennurum landsins ',
+          'og hefur starfað við Suzukipíanókennslu frá árinu 1989.'
+	]),
+	m('p', [
+          'Suzukipíanóskólinn byggir á áralangri reynslu á kennslu eftir ',
+          'móðurmálsaðferð Shinichi Suzuki og tekur mið af þörfum og veruleika ',
+          'íslenskra barna og foreldra þeirra. Rækt er lögð við jákvæða ',
+          'samvinnu og samveru foreldra og barna í markvissu tónlistarnámi. ',
+          'Skólinn er til húsa að Langarima 21, 112 Reykjavík en hefur auk ',
+          'þess starfsstöðvar í nokkrum grunnskólum á höfuðborgarsvæðinu.'
+	]),
+	m('p', [
+          'Suzukipíanóskólinn hefur tekið upp þá nýbreytni að bjóða upp á ',
+          'Suzukipíanókennslu í grunnskólum á skólatíma í samvinnu við ',
+          'hlutaðeigandi skóla. Suzukipíanóskólinn býður einnig upp á ',
+          'hefðbundna píanókennslu í grunnskólum á skólatíma. Áhugasömum ',
+          'skólastjórnendum um þetta námsframboð er bent á að senda fyrirspurn ',
+          'á ',
+	  m('a', {href: "mailto:suzukipianoskolinn@gmail.com"}, 
+	    'suzukipianoskolinn@gmail.com'),
+	  '.'
+	])
+      ]),
+      m.component(Right)
+    ])
   }
 };
