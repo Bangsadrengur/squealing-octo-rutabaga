@@ -4,7 +4,7 @@
   "description": "Code for suzukipianoskolinn.is",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "DEBUG=express:* node index.js",
     "start-local": "http-server dist/ > http-server.log &",
     "watch": "gulp watch",
     "dist": "gulp build",
