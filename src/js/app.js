@@ -90,3 +90,44 @@ var UmSkolann = {
     ])
   }
 };
+
+var FyrirkomulagK = {
+  view: function() {
+    return [
+      m('div[class="left"]', [
+        m('h1', 'Fyrirkomulag kennslu'),
+	m('p', [
+          'Í Suzukipíanóskólanum fylgja foreldrar barni sínu í einkatíma ',
+          'fyrstu árin og eins lengi og þeir kjósa, oft einnig í hóptíma og fá ',
+          'þar tækifæri til að kynnast öðrum foreldrum og börnum í sama námi. ',
+          'Fjölskyldan mætir svo gjarnan öll á tónleika sem haldnir eru í það ',
+          'minnsta tvisvar á ári.'
+	]),
+	m('h2', 'Námið byggist upp á:'),
+	m('div', {id: "nam_byggist_a"}, [
+	  m('h3', 'Einkatímum einu sinni í viku'),
+	  m('p', [
+            'Þar er unnið með þróun hljóðfæra-/spilatækni, músíkalitets og ',
+            'persónulegs þroska. Kennsla í tónfræði og nótnalestri hefst á ',
+            'öðru til þriðja ári.'
+	  ]),
+	  m('h3', 'Hóptímum aðra hverja viku'),
+	  m('p', [
+           'Hér liggur megináherslan á einleiks- og framkomuþjálfun, ',
+           'samspil, tónfræði/ tónheyrn, nótnalestur svo og félagsleg ',
+           'samskipti.'
+	  ]),
+          m('h3', 'Heimaspilatímum 6 daga vikunnar'),
+	  m('p', [
+            'Ástundun við heimaæfingar er forsenda árangurs  og gleði í ',
+            'tónlistarnáminu. Reglubundnar æfingar leggja góðan grunn að ',
+            'færni, uppbyggingu líkamlegs styrks og samhæfingar, spilatækni, ',
+            'þróun tóneyra og skemmtilegri samveru barna og foreldra í ',
+            'krefjandi og ánægjulegu verkefni.'
+	  ])
+	])
+      ]),
+      m.component(Right)
+    ]
+  }
+};
