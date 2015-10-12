@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "DEBUG=express:* node index.js",
+    "install": "gulp build",
     "start-local": "http-server dist/ > http-server.log &",
     "watch": "gulp watch",
     "dist": "gulp build",
