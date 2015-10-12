@@ -26,6 +26,7 @@
   "dependencies": {
     "del": "^2.0.2",
     "gulp": "^3.9.0",
+    "gulp-eslint": "^1.0.0",
     "gulp-html5-lint": "^1.0.1",
     "mithril": "^0.2.0"
   },
