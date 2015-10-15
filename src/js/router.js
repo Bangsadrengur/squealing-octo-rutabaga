@@ -9,3 +9,18 @@ m.route(document.getElementById("content"), "/", {
   "/myndir": Myndir
 });
 
+
+m.render(
+  document.getElementById('header-slideshow'),
+  {
+    view: function() {
+      return m.component(
+        Images,
+	{
+	  slideshowConf: headerSlideshowConf,
+	  images: images
+	}
+      );
+    }
+  }
+);

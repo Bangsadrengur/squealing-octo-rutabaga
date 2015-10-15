@@ -314,7 +314,7 @@ var mainSlideshowConf = function() {
   });
 };
 
-var initHeaderSlideshow = function() {
+var headerSlideshowConf = function() {
   $('#header .cycle-slideshow').cycle({
     centerHorz: true,
   });
