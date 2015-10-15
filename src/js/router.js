@@ -5,6 +5,7 @@ m.route(document.getElementById("content"), "/", {
   "/umsokn": Umsokn,
   "/um_skolann": UmSkolann,
   "/fyrirkomulag_kennslu": FyrirkomulagK,
-  "/suzuki_adferdin": suzukiAdferdin
+  "/suzuki_adferdin": suzukiAdferdin,
+  "/myndir": Myndir
 });
 

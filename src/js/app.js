@@ -1,3 +1,28 @@
+var images = {
+  'alt-text': "Mynd úr starfinu",
+  'path': 'images',
+  'file-names': [
+    "IMG_6530.jpg",
+    "IMG_6537.jpg",
+    "IMG_6551.jpg",
+    "IMG_6603.jpg",
+    "IMG_6615.jpg",
+    "IMG_6643.jpg",
+    "IMG_6666.jpg",
+    "IMG_6689.jpg",
+    "IMG_6702.jpg",
+    "IMG_6716.jpg",
+    "IMG_6739.jpg",
+    "image_1.jpg",
+    "image_2.jpg",
+    "image_3.jpg",
+    "image_4.jpg",
+    "image_5.jpg",
+    "image_6.jpg",
+    "image_7.jpg"
+  ]
+}
+
 // Widget for right side of screen displaying "Frístundakortið"
 var Right = {
   view: function() {
@@ -253,3 +278,64 @@ var suzukiAdferdin = {
     ];
   }
 };
+
+var Myndir = {
+  view: function() {
+    return [
+      m('div', {id: 'fyrri-mynd'}, [
+        m('strong', 'Fyrri mynd')
+      ]),
+      m(
+        'div',
+        {id: 'myndarammi'},
+        m.component(
+	  Images,
+	  {
+	    slideshowConf: mainSlideshowConf,
+	    images: images
+	  }
+	)
+      ),
+      m('div', {id: 'naesta-mynd'}, [
+        m('strong', 'Næsta mynd')
+      ])
+    ];
+  }
+};
+
+var mainSlideshowConf = function() {
+  $('#myndarammi .cycle-slideshow').cycle({
+    fx: 'scrollHorz',
+    centerHorz: true,
+    centerVert: true,
+    prev: "#fyrri-mynd",
+    next: "#naesta-mynd",
+    swipe: true
+  });
+};
+
+var initHeaderSlideshow = function() {
+  $('#header .cycle-slideshow').cycle({
+    centerHorz: true,
+  });
+};
+
+var Images = {
+  view: function(ctrl, args) {
+    return m(
+      'div[class="cycle-slideshow"]',
+      {
+        config: args.slideshowConf
+      },
+      args.images['file-names'].map(function(imageFile) {
+        return m(
+	  'img',
+	  {
+	    src: args.images.path + '/' + imageFile,
+	    alt: args.images['alt-text']
+	  }
+	);
+      })
+    );
+  }
+}
