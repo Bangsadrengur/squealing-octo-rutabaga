@@ -25,6 +25,7 @@ gulp.task('watch-src', function() {
   gulp.watch('src/js/*.js', ['js-lint', 'js-to-dist']);
   gulp.watch('src/css/*', ['css-to-dist']);
   gulp.watch('src/*.html', ['html5-lint', 'html-to-dist']);
+  gulp.watch('src/images/*', ['images-to-dist']);
 });
 
 gulp.task('mithril', function() {
