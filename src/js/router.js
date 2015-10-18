@@ -9,6 +9,15 @@ m.route(document.getElementById("content"), "/", {
   "/myndir": Myndir
 });
 
+initPages();
+m.mount(
+  document.querySelector('nav'),
+  {
+    view: function() {
+      return m.component(Nav, {pages: pages});
+    }
+  }
+);
 
 m.render(
   document.getElementById('header-slideshow'),
@@ -16,10 +25,10 @@ m.render(
     view: function() {
       return m.component(
         Images,
-	{
-	  slideshowConf: headerSlideshowConf,
-	  images: images
-	}
+        {
+          slideshowConf: headerSlideshowConf,
+          images: images
+        }
       );
     }
   }

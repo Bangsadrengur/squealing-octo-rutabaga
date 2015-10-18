@@ -1,3 +1,27 @@
+// MODEL -----------------------------------------------------------------------
+var pages = [
+  {path: '', text: 'Forsíða'},
+  {path: 'umsokn', text: 'Umsókn'},
+  {path: 'um_skolann', text: 'Um skólann'},
+  {path: 'fyrirkomulag_kennslu', text: 'Fyrirkomulag kennslu'},
+  {path: 'suzuki_adferdin', text: 'Suzukiaðferðin'},
+  {path: 'myndir', text: 'Myndir'}
+];
+
+// Use   : initPages();
+// Before: pages is a array of objects, each containing keys path and text.
+//          path: string -- url component
+//          text: string -- Text to display for path
+// After : Each object in pages has a property span.
+//          span: Mithril getter/setter set to false by default
+//        span property for pages[0] set to true, others to false.
+var initPages = function() {
+  pages.map(function(page) {
+    page.span = m.prop(false);
+  });
+  pages[0].span(true);
+};
+
 var images = {
   'alt-text': "Mynd úr starfinu",
   'path': 'images',
@@ -24,7 +48,8 @@ var images = {
     "image_9.jpg",
     "image_10.jpg"
   ]
-}
+};
+// MODEL ENDS ------------------------------------------------------------------
 
 // Widget for right side of screen displaying "Frístundakortið"
 var Right = {
@@ -32,10 +57,13 @@ var Right = {
     return m('div[class="right"]', [
       m('h3', 'Frístundakortið'),
       m('a[href="http://reykjavik.is/thjonusta/fristundakortid"]', [
-        m('img', {src: "images/fristundakortid_160.jpg", alt: "Frístundakortið"})
+        m('img', {
+          src: "images/fristundakortid_160.jpg",
+          alt: "Frístundakortið"
+        })
       ]),
       m('p', 'Suzukipíanóskólinn er aðili að Frístundakorti Reykjavíkur')
-    ])
+    ]);
   }
 };
 
@@ -45,7 +73,11 @@ var Home = {
     return m('div', [
       m('div[class="left"]', [
         m('h2', 'Velkomin á heimasíðu Suzukipíanóskólans'),
-        m('img', {id: "frontpage-img", src: "images/IMG_6551.jpg", alt:"Mynd úr starfinu"})
+        m('img', {
+          id: "frontpage-img",
+          src: "images/IMG_6551.jpg",
+          alt:"Mynd úr starfinu"
+        })
       ]),
       m.component(Right)
     ]);
@@ -59,14 +91,14 @@ var Umsokn = {
       m('div[class="left"]', [
         m('h1', 'Umsókn'),
         m('p', [
-         'Umsóknareyðublöð um tónlistarnám í skólanum er að finna ',
+          'Umsóknareyðublöð um tónlistarnám í skólanum er að finna ',
           m('a', {href: "assets/Suzukipianoskolinn-Umsokn.pdf"}, 'hér'),
           '. ',
           'Frekari upplýsingar og skráning getur líka farið fram á netfanginu ',
-          m('a', {href: "mailto:suzukipianoskolinn@gmail.com"}, 
+          m(
+            'a', {href: "mailto:suzukipianoskolinn@gmail.com"},
             'suzukipianoskolinn@gmail.com'
-          ),
-          '.'
+          ), '.'
         ]),
         m('h3', [
           'Reykvíkingar geta greitt hluta námsgjalds með Frístundakorti ',
@@ -78,7 +110,7 @@ var Umsokn = {
         ])
       ]),
       m.component(Right)
-    ])
+    ]);
   }
 };
 
@@ -96,7 +128,8 @@ var UmSkolann = {
         ]),
         m('p', [
           'Suzukipíanóskólinn byggir á áralangri reynslu á kennslu eftir ',
-          'móðurmálsaðferð Shinichi Suzuki og tekur mið af þörfum og veruleika ',
+          'móðurmálsaðferð Shinichi Suzuki og tekur mið af þörfum og ',
+          'veruleika ',
           'íslenskra barna og foreldra þeirra. Rækt er lögð við jákvæða ',
           'samvinnu og samveru foreldra og barna í markvissu tónlistarnámi. ',
           'Skólinn er til húsa að Langarima 21, 112 Reykjavík en hefur auk ',
@@ -107,15 +140,17 @@ var UmSkolann = {
           'Suzukipíanókennslu í grunnskólum á skólatíma í samvinnu við ',
           'hlutaðeigandi skóla. Suzukipíanóskólinn býður einnig upp á ',
           'hefðbundna píanókennslu í grunnskólum á skólatíma. Áhugasömum ',
-          'skólastjórnendum um þetta námsframboð er bent á að senda fyrirspurn ',
-          'á ',
-          m('a', {href: "mailto:suzukipianoskolinn@gmail.com"}, 
-            'suzukipianoskolinn@gmail.com'),
+          'skólastjórnendum um þetta námsframboð er bent á að senda ',
+          'fyrirspurn á ',
+          m(
+            'a', {href: "mailto:suzukipianoskolinn@gmail.com"},
+            'suzukipianoskolinn@gmail.com'
+          ),
           '.'
         ])
       ]),
       m.component(Right)
-    ])
+    ]);
   }
 };
 
@@ -126,7 +161,8 @@ var FyrirkomulagK = {
         m('h1', 'Fyrirkomulag kennslu'),
         m('p', [
           'Í Suzukipíanóskólanum fylgja foreldrar barni sínu í einkatíma ',
-          'fyrstu árin og eins lengi og þeir kjósa, oft einnig í hóptíma og fá ',
+          'fyrstu árin og eins lengi og þeir kjósa, oft einnig í hóptíma og ',
+          'fá ',
           'þar tækifæri til að kynnast öðrum foreldrum og börnum í sama námi. ',
           'Fjölskyldan mætir svo gjarnan öll á tónleika sem haldnir eru í það ',
           'minnsta tvisvar á ári.'
@@ -141,9 +177,9 @@ var FyrirkomulagK = {
           ]),
           m('h3', 'Hóptímum aðra hverja viku'),
           m('p', [
-           'Hér liggur megináherslan á einleiks- og framkomuþjálfun, ',
-           'samspil, tónfræði/ tónheyrn, nótnalestur svo og félagsleg ',
-           'samskipti.'
+            'Hér liggur megináherslan á einleiks- og framkomuþjálfun, ',
+            'samspil, tónfræði/ tónheyrn, nótnalestur svo og félagsleg ',
+            'samskipti.'
           ]),
           m('h3', 'Heimaspilatímum 6 daga vikunnar'),
           m('p', [
@@ -165,7 +201,8 @@ var suzukiAdferdin = {
     return [
       m('div[class="left"]', [
         m('h1', 'Suzukiaðferðin'),
-        m('p',
+        m(
+          'p',
           'Það var Japaninn Shinichi Suzuki (1898-1998) sem þróaði ',
           'tónlistarkennsluaðferð er hann nefndi móðurmálsaðferðina. Hafandi ',
           'velt því fyrir sér hvað börn virtust eiga auðvelt með að læra og ',
@@ -270,12 +307,17 @@ var suzukiAdferdin = {
         m('a', {href: "www.suzukimusic.com.au"}, 'www.suzukimusic.com.au'),
         m('h3', 'Suzuki Association of the Americas (SAA)'),
         m('p', 'Norður og Suður Ameríka'),
-        m('a', {href: "www.suzukiassociation.org"}, 'www.suzukiassociation.org'),
+        m(
+          'a', {href: "www.suzukiassociation.org"}, 'www.suzukiassociation.org'
+        ),
         m('h3', 'Talent Education Research Institute (TERI)'),
         m('p', 'Japan'),
         m('a', {href: "www.suzukimethod.or.jp"}, 'www.suzukimethod.or.jp'),
         m('h3', 'Alþjóða Suzukisambandið (International Suzuki Association)'),
-        m('a', {href: "www.internationalsuzuki.org"}, 'www.internationalsuzuki.org')
+        m(
+          'a', {href: "www.internationalsuzuki.org"},
+          'www.internationalsuzuki.org'
+        )
       ]),
       m.component(Right)
     ];
@@ -292,12 +334,12 @@ var Myndir = {
         'div',
         {id: 'myndarammi'},
         m.component(
-	  Images,
-	  {
-	    slideshowConf: mainSlideshowConf,
-	    images: images
-	  }
-	)
+          Images,
+          {
+            slideshowConf: mainSlideshowConf,
+            images: images
+          }
+        )
       ),
       m('div', {id: 'naesta-mynd'}, [
         m('strong', 'Næsta mynd')
@@ -332,13 +374,47 @@ var Images = {
       },
       args.images['file-names'].map(function(imageFile) {
         return m(
-	  'img',
-	  {
-	    src: args.images.path + '/' + imageFile,
-	    alt: args.images['alt-text']
-	  }
-	);
+          'img',
+          {
+            src: args.images.path + '/' + imageFile,
+            alt: args.images['alt-text']
+          }
+        );
       })
     );
   }
-}
+};
+
+var Nav = {
+  vm: {
+    init: function() {
+      Nav.vm.pages = pages;
+    },
+    changeActiveNavTo: function(nav) {
+      Nav.vm.pages.map(function(page) {
+        page.span(false);
+      });
+      nav.span(true);
+    }
+  },
+  controller: function(args) {
+    Nav.vm.init();
+  },
+  view: function(ctrl, args) {
+    return m('ul', [
+      args.pages.map(function(page) {
+        var urlText = page.text;
+        if(page.span()) {
+          urlText = m('span', page.text);
+        }
+
+        return m('li', m(
+          'a', {
+            href: '#/' + page.path,
+            onclick: Nav.vm.changeActiveNavTo.bind(Nav.vm, page)
+          }, urlText
+        ));
+      })
+    ]);
+  }
+};
