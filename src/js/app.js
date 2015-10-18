@@ -66,7 +66,7 @@ var Umsokn = {
           m('a', {href: "mailto:suzukipianoskolinn@gmail.com"}, 
             'suzukipianoskolinn@gmail.com'
           ),
-          ' og einnig í viðkomandi grunnskólum.'
+          '.'
         ]),
         m('h3', [
           'Reykvíkingar geta greitt hluta námsgjalds með Frístundakorti ',
