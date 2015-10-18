@@ -60,7 +60,7 @@ var Umsokn = {
         m('h1', 'Umsókn'),
         m('p', [
          'Umsóknareyðublöð um tónlistarnám í skólanum er að finna ',
-          m('a', {href: "Suzukipianoskolinn-Umsokn.pdf"}, 'hér'),
+          m('a', {href: "assets/Suzukipianoskolinn-Umsokn.pdf"}, 'hér'),
           '. ',
           'Frekari upplýsingar og skráning getur líka farið fram á netfanginu ',
           m('a', {href: "mailto:suzukipianoskolinn@gmail.com"}, 
