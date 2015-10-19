@@ -1,4 +1,9 @@
 // MODEL -----------------------------------------------------------------------
+//
+// Data invariant:
+//    pages: Array of objects, each containing keys path and text.
+//          path: string -- url component
+//          text: string -- Text to display for path
 var pages = [
   {path: '', text: 'Forsíða'},
   {path: 'umsokn', text: 'Umsókn'},
@@ -9,17 +14,27 @@ var pages = [
 ];
 
 // Use   : initPages();
-// Before: pages is a array of objects, each containing keys path and text.
-//          path: string -- url component
-//          text: string -- Text to display for path
+// Before: pages object exists; See data invariant.
 // After : Each object in pages has a property span.
 //          span: Mithril getter/setter set to false by default
-//        span property for pages[0] set to true, others to false.
 var initPages = function() {
   pages.map(function(page) {
     page.span = m.prop(false);
   });
-  //pages[0].span(true);
+};
+
+// Use   : setActiveNavTo(page);
+// Before: pages object exists; See data invariant.
+//          initPages() has been called or each page in pages has a property
+//          span which is a mithril value with boolean content.
+// Before: pages[page].span === true.
+//          allExecptPage = {1..pages.length} / page; pages[notPage] === false
+//          where notPage is any value of allExceptPage.
+var setActiveNavTo = function(page) {
+  pages.map(function(page) {
+    page.span(false);
+  });
+  pages[page].span(true);
 };
 
 var images = {
@@ -71,13 +86,12 @@ var Right = {
 var Home = {
   vm: {
     init: function() {
-      // Set corresponding nav as active
-      initPages();
-      pages[0].span(true);
+      Home.vm.pageNumber = 0;
     }
   },
   controller: function() {
     Home.vm.init();
+    setActiveNavTo(Home.vm.pageNumber);
   },
   view: function() {
     return m('div', [
@@ -98,13 +112,12 @@ var Home = {
 var Umsokn = {
   vm: {
     init: function() {
-      // Set corresponding nav as active
-      initPages();
-      pages[1].span(true);
+      Umsokn.vm.pageNumber = 1;
     }
   },
   controller: function() {
     Umsokn.vm.init();
+    setActiveNavTo(Umsokn.vm.pageNumber);
   },
   view: function() {
     return m('div', [
@@ -138,13 +151,12 @@ var Umsokn = {
 var UmSkolann = {
   vm: {
     init: function() {
-      // Set corresponding nav as active
-      initPages();
-      pages[2].span(true);
+      UmSkolann.vm.pageNumber = 2;
     }
   },
   controller: function() {
     UmSkolann.vm.init();
+    setActiveNavTo(UmSkolann.vm.pageNumber);
   },
   view: function() {
     return m('div', [
@@ -187,13 +199,12 @@ var UmSkolann = {
 var FyrirkomulagK = {
   vm: {
     init: function() {
-      // Set corresponding nav as active
-      initPages();
-      pages[3].span(true);
+      FyrirkomulagK.vm.pageNumber = 3;
     }
   },
   controller: function() {
     FyrirkomulagK.vm.init();
+    setActiveNavTo(FyrirkomulagK.vm.pageNumber);
   },
   view: function() {
     return [
@@ -239,13 +250,12 @@ var FyrirkomulagK = {
 var SuzukiAdferdin = {
   vm: {
     init: function() {
-      // Set corresponding nav as active
-      initPages();
-      pages[4].span(true);
+      SuzukiAdferdin.vm.pageNumber = 4;
     }
   },
   controller: function() {
     SuzukiAdferdin.vm.init();
+    setActiveNavTo(SuzukiAdferdin.vm.pageNumber);
   },
   view: function() {
     return [
@@ -377,13 +387,12 @@ var SuzukiAdferdin = {
 var Myndir = {
   vm: {
     init: function() {
-      // Set corresponding nav as active
-      initPages();
-      pages[5].span(true);
+      Myndir.vm.pageNumber = 5;
     }
   },
   controller: function() {
     Myndir.vm.init();
+    setActiveNavTo(Myndir.vm.pageNumber);
   },
   view: function() {
     return [
@@ -446,20 +455,6 @@ var Images = {
 };
 
 var Nav = {
-  vm: {
-    init: function() {
-      Nav.vm.pages = pages;
-    },
-    changeActiveNavTo: function(nav) {
-      //Nav.vm.pages.map(function(page) {
-      //  page.span(false);
-      //});
-      //nav.span(true);
-    }
-  },
-  controller: function(args) {
-    Nav.vm.init();
-  },
   view: function(ctrl, args) {
     return m('ul', [
       args.pages.map(function(page) {
@@ -471,7 +466,6 @@ var Nav = {
         return m('li', m(
           'a', {
             href: '#/' + page.path,
-            onclick: Nav.vm.changeActiveNavTo.bind(Nav.vm, page)
           }, urlText
         ));
       })

@@ -1,3 +1,6 @@
+// Todo: This probably belongs somewhere else
+initPages();
+
 m.route.mode = "hash";
 
 m.route(document.getElementById("content"), "/", {
