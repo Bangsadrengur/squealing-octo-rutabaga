@@ -19,7 +19,7 @@ var initPages = function() {
   pages.map(function(page) {
     page.span = m.prop(false);
   });
-  pages[0].span(true);
+  //pages[0].span(true);
 };
 
 var images = {
@@ -69,6 +69,16 @@ var Right = {
 
 // Main content for greeter page
 var Home = {
+  vm: {
+    init: function() {
+      // Set corresponding nav as active
+      initPages();
+      pages[0].span(true);
+    }
+  },
+  controller: function() {
+    Home.vm.init();
+  },
   view: function() {
     return m('div', [
       m('div[class="left"]', [
@@ -86,6 +96,16 @@ var Home = {
 
 // Main content for application page
 var Umsokn = {
+  vm: {
+    init: function() {
+      // Set corresponding nav as active
+      initPages();
+      pages[1].span(true);
+    }
+  },
+  controller: function() {
+    Umsokn.vm.init();
+  },
   view: function() {
     return m('div', [
       m('div[class="left"]', [
@@ -116,6 +136,16 @@ var Umsokn = {
 
 // Main content for info about school
 var UmSkolann = {
+  vm: {
+    init: function() {
+      // Set corresponding nav as active
+      initPages();
+      pages[2].span(true);
+    }
+  },
+  controller: function() {
+    UmSkolann.vm.init();
+  },
   view: function() {
     return m('div', [
       m('div[class="left"]', [
@@ -155,6 +185,16 @@ var UmSkolann = {
 };
 
 var FyrirkomulagK = {
+  vm: {
+    init: function() {
+      // Set corresponding nav as active
+      initPages();
+      pages[3].span(true);
+    }
+  },
+  controller: function() {
+    FyrirkomulagK.vm.init();
+  },
   view: function() {
     return [
       m('div[class="left"]', [
@@ -196,7 +236,17 @@ var FyrirkomulagK = {
   }
 };
 
-var suzukiAdferdin = {
+var SuzukiAdferdin = {
+  vm: {
+    init: function() {
+      // Set corresponding nav as active
+      initPages();
+      pages[4].span(true);
+    }
+  },
+  controller: function() {
+    SuzukiAdferdin.vm.init();
+  },
   view: function() {
     return [
       m('div[class="left"]', [
@@ -325,6 +375,16 @@ var suzukiAdferdin = {
 };
 
 var Myndir = {
+  vm: {
+    init: function() {
+      // Set corresponding nav as active
+      initPages();
+      pages[5].span(true);
+    }
+  },
+  controller: function() {
+    Myndir.vm.init();
+  },
   view: function() {
     return [
       m('div', {id: 'fyrri-mynd'}, [
@@ -391,10 +451,10 @@ var Nav = {
       Nav.vm.pages = pages;
     },
     changeActiveNavTo: function(nav) {
-      Nav.vm.pages.map(function(page) {
-        page.span(false);
-      });
-      nav.span(true);
+      //Nav.vm.pages.map(function(page) {
+      //  page.span(false);
+      //});
+      //nav.span(true);
     }
   },
   controller: function(args) {

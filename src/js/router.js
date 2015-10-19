@@ -5,11 +5,10 @@ m.route(document.getElementById("content"), "/", {
   "/umsokn": Umsokn,
   "/um_skolann": UmSkolann,
   "/fyrirkomulag_kennslu": FyrirkomulagK,
-  "/suzuki_adferdin": suzukiAdferdin,
+  "/suzuki_adferdin": SuzukiAdferdin,
   "/myndir": Myndir
 });
 
-initPages();
 m.mount(
   document.querySelector('nav'),
   {
