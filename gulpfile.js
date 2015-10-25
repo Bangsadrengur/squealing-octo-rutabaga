@@ -29,14 +29,21 @@ gulp.task('watch-src', function() {
   gulp.watch('src/assets/*', ['assets-to-dist']);
 });
 
-gulp.task('mithril', function() {
+gulp.task('mithril-to-dist', function() {
   var mithrilPath = './node_modules/mithril';
   gulp.src([
     mithrilPath + '/mithril.min.js',
     mithrilPath + '/mithril.min.js.map',
     mithrilPath + '/mithril.js'
     ])
-    .pipe(gulp.dest('./dist/lib'));
+    .pipe(gulp.dest('./dist/lib/mithril'));
+});
+
+gulp.task('bootstrap-to-dist', function() {
+  var bootstrapPath = './node_modules/bootstrap/dist/**/*';
+  gulp.src(bootstrapPath).pipe(
+    gulp.dest('./dist/lib/bootstrap')
+  );
 });
 
 gulp.task('js-to-dist', function() {
@@ -80,7 +87,8 @@ gulp.task('build', [
   'css-to-dist',
   'images-to-dist',
   'assets-to-dist',
-  'mithril'
+  'mithril-to-dist',
+  'bootstrap-to-dist'
 ]);
 
 gulp.task('watch', ['watch-src']);
