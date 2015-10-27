@@ -2,9 +2,8 @@ language: node_js
 node_js:
 - '4.1'
 before_script:
-- npm install
 - gulp build
-after_script:
+after_success:
 - npm prune --production
 - rm -rf src
 - rm -rf test
