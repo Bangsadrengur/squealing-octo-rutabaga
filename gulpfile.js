@@ -57,6 +57,12 @@ gulp.task('html-to-dist', function() {
 });
 
 gulp.task('jquery-to-dist', function() {
+  gulp.src('./node_modules/jquery/dist/*.js').pipe(
+    gulp.dest('./dist/lib/jquery')
+  );
+});
+
+gulp.task('jquery-cycle-to-dist', function() {
   gulp.src('./src/jquery/*.js')
     .pipe(gulp.dest('./dist/jquery'));
 });
@@ -84,6 +90,7 @@ gulp.task('build', [
   'js-to-dist',
   'html-to-dist',
   'jquery-to-dist',
+  'jquery-cycle-to-dist',
   'css-to-dist',
   'images-to-dist',
   'assets-to-dist',
