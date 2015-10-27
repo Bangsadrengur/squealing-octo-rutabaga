@@ -3,7 +3,7 @@ node_js:
 - '4.1'
 before_script:
 - gulp build
-after_success:
+before_deploy:
 - npm prune --production
 - rm -rf src
 - rm -rf test
