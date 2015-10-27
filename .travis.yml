@@ -3,6 +3,11 @@ node_js:
 - '4.1'
 before_script:
 - npm install
+- gulp build
+after_script:
+- npm prune --production
+- rm -rf src
+- rm -rf test
 deploy:
   provider: heroku
   api_key:
@@ -11,3 +16,4 @@ deploy:
     develop: stormy-caverns-1711
   on:
     repo: Bangsadrengur/squealing-octo-rutabaga
+  skip_cleanup: true
