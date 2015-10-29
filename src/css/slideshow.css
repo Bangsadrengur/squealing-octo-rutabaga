@@ -1,0 +1,63 @@
+#header .cycle-slideshow
+{
+    float: right;
+}
+
+.cycle-slideshow img
+{
+    display: none;
+}
+
+.cycle-slideshow img.first
+{
+    display: block;
+}
+
+#header .cycle-slideshow img
+{
+    height: 190px;
+    margin: 15px 15px 15px 0;
+    border: 5px solid white;
+    border-radius: 5px;
+}
+
+#myndarammi
+{
+    height: 544px;
+    width: 748px;
+    float: left;
+}
+
+#myndarammi .cycle-slideshow
+{
+    height: 544px;
+    width: 748px;
+}
+
+#myndarammi img
+{
+    max-height: 533px;
+    max-width: 748px;
+}
+
+#fyrri-mynd
+{
+    width: 100px;
+}
+
+#naesta-mynd
+{
+    width: 112px;
+}
+
+#fyrri-mynd, #naesta-mynd
+{
+    display: inline-block;
+    float: left;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    height: 544px;
+    line-height: 544px;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(188, 54, 10);
+}

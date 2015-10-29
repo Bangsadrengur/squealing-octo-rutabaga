@@ -456,18 +456,19 @@ var Images = {
 
 var Nav = {
   view: function(ctrl, args) {
-    return m('ul', [
+    return m('ul[class="nav navbar-nav"]', [
       args.pages.map(function(page) {
-        var urlText = page.text;
+        var component = m('li', m('a', {href: '#/' + page.path}, page.text));
         if(page.span()) {
-          urlText = m('span', page.text);
+          component = m('li[class="active"]', m(
+            'a', {href: '#/' + page.path}, [
+              page.text,
+              m('span[class="sr-only"]', '(current)')
+            ]
+          ));
         }
 
-        return m('li', m(
-          'a', {
-            href: '#/' + page.path,
-          }, urlText
-        ));
+        return component;
       })
     ]);
   }

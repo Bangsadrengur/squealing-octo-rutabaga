@@ -1,0 +1,17 @@
+#header
+{
+    display: block;
+    background-color: #d47618;
+    height: 230px;
+}
+
+#logo
+{
+    height: 230px;
+    float: left;
+    position: relative;
+    left: 100px;
+    /* IE: Removes blue border around image links */
+    text-decoration: none;
+    border: 0px;
+}

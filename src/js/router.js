@@ -13,7 +13,7 @@ m.route(document.getElementById("content"), "/", {
 });
 
 m.mount(
-  document.querySelector('nav'),
+  document.querySelector('div.collapse.navbar-collapse'),
   {
     view: function() {
       return m.component(Nav, {pages: pages});

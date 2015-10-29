@@ -1,0 +1,9 @@
+#frontpage-img
+{
+    width: 323px;
+    height: 330px;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: block;
+    margin: 20px auto;
+}
