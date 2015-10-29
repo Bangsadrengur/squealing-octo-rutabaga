@@ -16,14 +16,16 @@ gulp.task('js-lint', function () {
     .pipe(eslint.failAfterError());
 });
 
+// Disabled until gulp-html5-lint is fixed
 gulp.task('html5-lint', function() {
-  return gulp.src('./src/*.html')
-    .pipe(html5Lint());
+  return;
+  //return gulp.src('./src/*.html')
+  //  .pipe(html5Lint());
 });
 
 gulp.task('watch-src', function() {
   gulp.watch('src/js/*.js', ['js-lint', 'js-to-dist']);
-  gulp.watch('src/css/*', ['css-to-dist']);
+  gulp.watch('src/css/*.css', ['css-to-dist']);
   gulp.watch('src/*.html', ['html5-lint', 'html-to-dist']);
   gulp.watch('src/images/*', ['images-to-dist']);
   gulp.watch('src/assets/*', ['assets-to-dist']);
@@ -68,7 +70,7 @@ gulp.task('jquery-cycle-to-dist', function() {
 });
 
 gulp.task('css-to-dist', function() {
-  gulp.src('./src/css/*')
+  gulp.src('./src/css/*.css')
     .pipe(gulp.dest('./dist/css'));
 });
 
