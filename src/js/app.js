@@ -69,15 +69,18 @@ var images = {
 // Widget for right side of screen displaying "Frístundakortið"
 var Right = {
   view: function() {
-    return m('div[class="right"]', [
-      m('h3', 'Frístundakortið'),
+    return m('div[class="col-md-4 well"]', [
+      m('h3[class="text-center"]', 'Frístundakortið'),
       m('a[href="http://reykjavik.is/thjonusta/fristundakortid"]', [
-        m('img', {
+        m('img[class="center-block"]', {
           src: "images/fristundakortid_160.jpg",
           alt: "Frístundakortið"
         })
       ]),
-      m('p', 'Suzukipíanóskólinn er aðili að Frístundakorti Reykjavíkur')
+      m(
+        'p[class="text-center"]',
+        'Suzukipíanóskólinn er aðili að Frístundakorti Reykjavíkur'
+      )
     ]);
   }
 };
@@ -94,8 +97,8 @@ var Home = {
     setActiveNavTo(Home.vm.pageNumber);
   },
   view: function() {
-    return m('div', [
-      m('div[class="left"]', [
+    return m('div[class="row"]', [
+      m('div[class="col-md-8"]', [
         m('h2', 'Velkomin á heimasíðu Suzukipíanóskólans'),
         m('img', {
           id: "frontpage-img",
@@ -120,8 +123,8 @@ var Umsokn = {
     setActiveNavTo(Umsokn.vm.pageNumber);
   },
   view: function() {
-    return m('div', [
-      m('div[class="left"]', [
+    return m('div[class="row"]', [
+      m('div[class="col-md-8"]', [
         m('h1', 'Umsókn'),
         m('p', [
           'Umsóknareyðublöð um tónlistarnám í skólanum er að finna ',
@@ -159,8 +162,8 @@ var UmSkolann = {
     setActiveNavTo(UmSkolann.vm.pageNumber);
   },
   view: function() {
-    return m('div', [
-      m('div[class="left"]', [
+    return m('div[class="row"]', [
+      m('div[class="col-md-8"]', [
         m('h1', 'Um skólann'),
         m('p', [
           'Suzukipíanóskólinn var stofnaður árið 2009 af Elínu Hannesdóttur ',
@@ -207,8 +210,8 @@ var FyrirkomulagK = {
     setActiveNavTo(FyrirkomulagK.vm.pageNumber);
   },
   view: function() {
-    return [
-      m('div[class="left"]', [
+    return m('div[class="row"]', [
+      m('div[class="col-md-8"]', [
         m('h1', 'Fyrirkomulag kennslu'),
         m('p', [
           'Í Suzukipíanóskólanum fylgja foreldrar barni sínu í einkatíma ',
@@ -243,7 +246,7 @@ var FyrirkomulagK = {
         ])
       ]),
       m.component(Right)
-    ];
+    ]);
   }
 };
 
@@ -258,8 +261,8 @@ var SuzukiAdferdin = {
     setActiveNavTo(SuzukiAdferdin.vm.pageNumber);
   },
   view: function() {
-    return [
-      m('div[class="left"]', [
+    return m('div[class="row"]', [
+      m('div[class="col-md-8"]', [
         m('h1', 'Suzukiaðferðin'),
         m(
           'p',
@@ -380,7 +383,7 @@ var SuzukiAdferdin = {
         )
       ]),
       m.component(Right)
-    ];
+    ]);
   }
 };
 
@@ -395,12 +398,14 @@ var Myndir = {
     setActiveNavTo(Myndir.vm.pageNumber);
   },
   view: function() {
-    return [
-      m('div', {id: 'fyrri-mynd'}, [
-        m('strong', 'Fyrri mynd')
+    return m('div[class="row"]', [
+      m('div[class="col-md-1"]', {id: 'fyrri-mynd'}, [
+        m('button[class="btn btn-default"]', [
+          m('span[class="glyphicon glyphicon-menu-left"]')
+        ]),
       ]),
       m(
-        'div',
+        'div[class="col-md-10"]',
         {id: 'myndarammi'},
         m.component(
           Images,
@@ -410,10 +415,12 @@ var Myndir = {
           }
         )
       ),
-      m('div', {id: 'naesta-mynd'}, [
-        m('strong', 'Næsta mynd')
-      ])
-    ];
+      m('div[class="col-md-1"]', {id: 'naesta-mynd'}, [
+        m('button[class="btn btn-default"]', [
+          m('span[class="glyphicon glyphicon-menu-right"]')
+        ]),
+      ]),
+    ]);
   }
 };
 
@@ -443,7 +450,7 @@ var Images = {
       },
       args.images['file-names'].map(function(imageFile) {
         return m(
-          'img',
+          'img[class="img-responsive center-block"]',
           {
             src: args.images.path + '/' + imageFile,
             alt: args.images['alt-text']

@@ -3,7 +3,7 @@ initPages();
 
 m.route.mode = "hash";
 
-m.route(document.getElementById("content"), "/", {
+m.route(document.querySelector("div.container"), "/", {
   "/": Home,
   "/umsokn": Umsokn,
   "/um_skolann": UmSkolann,
