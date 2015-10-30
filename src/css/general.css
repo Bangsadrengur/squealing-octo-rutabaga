@@ -1,0 +1,12 @@
+html
+{
+  /* Footer settings */
+  min-height: 100%;
+  position: relative;
+}
+
+body
+{
+  /* Footer settings */
+  margin-bottom: 80px;
+}

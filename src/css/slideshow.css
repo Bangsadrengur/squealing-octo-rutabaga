@@ -1,0 +1,42 @@
+#header .cycle-slideshow
+{
+    float: right;
+}
+
+.cycle-slideshow img
+{
+    display: none;
+}
+
+.cycle-slideshow img.first
+{
+    display: block;
+}
+
+#header .cycle-slideshow img
+{
+    height: 190px;
+    margin: 15px 15px 15px 0;
+    border: 5px solid white;
+    border-radius: 5px;
+}
+
+#myndarammi
+{
+    height: 544px;
+}
+
+#myndarammi .cycle-slideshow
+{
+    height: 544px;
+}
+
+#myndarammi img
+{
+    max-height: 533px;
+}
+#fyrri-mynd, #naesta-mynd
+{
+    height: 544px;
+    line-height: 544px;
+}

@@ -3,7 +3,7 @@ initPages();
 
 m.route.mode = "hash";
 
-m.route(document.getElementById("content"), "/", {
+m.route(document.querySelector("div.container"), "/", {
   "/": Home,
   "/umsokn": Umsokn,
   "/um_skolann": UmSkolann,
@@ -13,7 +13,7 @@ m.route(document.getElementById("content"), "/", {
 });
 
 m.mount(
-  document.querySelector('nav'),
+  document.querySelector('div.collapse.navbar-collapse'),
   {
     view: function() {
       return m.component(Nav, {pages: pages});
