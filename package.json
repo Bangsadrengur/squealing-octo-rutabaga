@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node index.js",
     "test": "karma start --single-run",
-    "start-local": "http-server dist/ > http-server.log &",
     "watch": "gulp watch",
     "dist": "gulp build",
     "clean": "gulp clean"
