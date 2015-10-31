@@ -14,7 +14,7 @@ deploy:
     secure: Sgp5HOf5uK9oKanvPmlExI06ngwEnpxBTHHhgVbUtb8BGXCrHpZgwN5tFc9du/1+MA3W4hM3Eom4lMv0tAndMZ23xCkaGjMaZ7/Pi1/eZnS5dlfFeyEsFULGv1dLWodsoXlZzCQniCfK+wvVtD8jmo++UcIh79EFMtX/sCxspggVXu8I3S7S40LDuf1iGqRhT6zNz4aUpxOvVyG/aYT0K7ZQbuLT7HsywMjmJ43nNtebadiGwM9Q8nlFzXQRAwg2Mka01rZSCN/RVqb8eoTOagmpEWTAbWVczjWLlKCuqb8xUOxz/8ha3l0ah0oaC55tRew2q+TKJdsFvyMbczWQzmJb98/H/ttDkg2ZVFKqlunkhHacte9MwFLWYI3ECyRDMN3Nl8CrawIPTP9gJ1u/UcQo1u9HL7EYVeWRHnBQAlL+oGv2mQnbjMjqMMRJ+N00jzH6gQtrpy14SCuoxqr5W/AAv8VkSYY5XVP8zQE1gCWcfgLDInsdNIbHMt3Wfvdf91apPjgBmrOCxY9dovZAC+Aj5lXOBYX6rx+w2zJroNzfU6Gw3PzRq+4iFtY/IiuxYrrlTfgW4Bc7HlCMtt3jROCwUFrKv3/RnY5w9iY/h4QStwbRKrUtju0AeH8LvjIYkx24QsQPgr/i2mxQAk7ZlESJ1CEzlYN2xT/gxq4Oy04=
   bucket: solid-fox
   local-dir: dist
-  acl: ''
+  acl: 'public_read'
   on:
     repo: Bangsadrengur/squealing-octo-rutabaga
     branch: s3-deployment
