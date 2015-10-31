@@ -1,3 +1,12 @@
+language: node_js
+node_js:
+- '4.1'
+before_script:
+- gulp build
+before_deploy:
+- npm prune --production
+- rm -rf src
+- rm -rf test
 deploy:
   provider: s3
   access_key_id: AKIAIPHWVOJJRO4PC77Q
@@ -9,3 +18,4 @@ deploy:
   on:
     repo: Bangsadrengur/squealing-octo-rutabaga
     branch: s3-deployment
+  skip_cleanup: true
