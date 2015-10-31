@@ -8,11 +8,22 @@ before_deploy:
 - rm -rf src
 - rm -rf test
 deploy:
-  provider: heroku
-  api_key:
-    secure: ECnQqn/L1MzL7ePifqEVbflcfoCyYvgQ374P/YnsTQx6Pj1mpuQD8Ty/f5yxe2fQQrXhJWyQ99KKBvpmjIzjaV2Z3ye5W5diHEe9u8d94EL65a0pAWkZ9j/a4jVNVBbo+VMJjrD14FmI/3iuVosa9/S0F2byB0SBl6wYSLtHtNP3DuerfOnkKkw2++Ngx2LtiydxAggFVnN6kERc/avmh8i55y/xgbMMjdvzqwq+4+zRm/1vydMoSOzzmtjl8Jc5k8CMndzOoiAMXtPl0qTTzR4whlVO5vp4cHsSfOtmZhp4BuwbkbkTvsiG9Y5tz+UBNDgl9DD4aF+k5VqppGL+iiSakZRrUKB3HWNp7YAnILufzdXVZld4xNpb7mMoBo7WpVq1aMLc2kpho023UqG0O/d+RBNGUXLnweAvVYgeXf4p4Bzu3XtPcwvgFo0ev/ZlEa5xutOhou3lXznRr31TmEIzkUS/Iy8SlvH8FHWH5o2VShK9f/bC2p+xWxgKCd/D/yA/GeTYehGjDQoDBYQ+rA5+5GfB4sgl7F7VAbpWvw7qRStC59KUAtaNAbVhWx4H64sp3VwA6rURp7oTGnyVZB+x612jTENAF6z1Yrjk8dPBNxP0AUFjPYYQFVbo629zm4xUuagSgzKflr0y35sYiIYBss2CC2I93j5oFk1ELb8=
-  app: 
-    develop: stormy-caverns-1711
-  on:
-    repo: Bangsadrengur/squealing-octo-rutabaga
-  skip_cleanup: true
+  - provider: s3
+    access_key_id: AKIAIPHWVOJJRO4PC77Q
+    secret_access_key:
+      secure: Sgp5HOf5uK9oKanvPmlExI06ngwEnpxBTHHhgVbUtb8BGXCrHpZgwN5tFc9du/1+MA3W4hM3Eom4lMv0tAndMZ23xCkaGjMaZ7/Pi1/eZnS5dlfFeyEsFULGv1dLWodsoXlZzCQniCfK+wvVtD8jmo++UcIh79EFMtX/sCxspggVXu8I3S7S40LDuf1iGqRhT6zNz4aUpxOvVyG/aYT0K7ZQbuLT7HsywMjmJ43nNtebadiGwM9Q8nlFzXQRAwg2Mka01rZSCN/RVqb8eoTOagmpEWTAbWVczjWLlKCuqb8xUOxz/8ha3l0ah0oaC55tRew2q+TKJdsFvyMbczWQzmJb98/H/ttDkg2ZVFKqlunkhHacte9MwFLWYI3ECyRDMN3Nl8CrawIPTP9gJ1u/UcQo1u9HL7EYVeWRHnBQAlL+oGv2mQnbjMjqMMRJ+N00jzH6gQtrpy14SCuoxqr5W/AAv8VkSYY5XVP8zQE1gCWcfgLDInsdNIbHMt3Wfvdf91apPjgBmrOCxY9dovZAC+Aj5lXOBYX6rx+w2zJroNzfU6Gw3PzRq+4iFtY/IiuxYrrlTfgW4Bc7HlCMtt3jROCwUFrKv3/RnY5w9iY/h4QStwbRKrUtju0AeH8LvjIYkx24QsQPgr/i2mxQAk7ZlESJ1CEzlYN2xT/gxq4Oy04=
+    bucket: solid-fox
+    local-dir: dist
+    acl: 'public_read'
+    on:
+      repo: Bangsadrengur/squealing-octo-rutabaga
+      branch: master
+    skip_cleanup: true
+  - provider: heroku
+    api_key:
+      secure: ECnQqn/L1MzL7ePifqEVbflcfoCyYvgQ374P/YnsTQx6Pj1mpuQD8Ty/f5yxe2fQQrXhJWyQ99KKBvpmjIzjaV2Z3ye5W5diHEe9u8d94EL65a0pAWkZ9j/a4jVNVBbo+VMJjrD14FmI/3iuVosa9/S0F2byB0SBl6wYSLtHtNP3DuerfOnkKkw2++Ngx2LtiydxAggFVnN6kERc/avmh8i55y/xgbMMjdvzqwq+4+zRm/1vydMoSOzzmtjl8Jc5k8CMndzOoiAMXtPl0qTTzR4whlVO5vp4cHsSfOtmZhp4BuwbkbkTvsiG9Y5tz+UBNDgl9DD4aF+k5VqppGL+iiSakZRrUKB3HWNp7YAnILufzdXVZld4xNpb7mMoBo7WpVq1aMLc2kpho023UqG0O/d+RBNGUXLnweAvVYgeXf4p4Bzu3XtPcwvgFo0ev/ZlEa5xutOhou3lXznRr31TmEIzkUS/Iy8SlvH8FHWH5o2VShK9f/bC2p+xWxgKCd/D/yA/GeTYehGjDQoDBYQ+rA5+5GfB4sgl7F7VAbpWvw7qRStC59KUAtaNAbVhWx4H64sp3VwA6rURp7oTGnyVZB+x612jTENAF6z1Yrjk8dPBNxP0AUFjPYYQFVbo629zm4xUuagSgzKflr0y35sYiIYBss2CC2I93j5oFk1ELb8=
+    app: 
+      develop: stormy-caverns-1711
+    on:
+      repo: Bangsadrengur/squealing-octo-rutabaga
+    skip_cleanup: true
