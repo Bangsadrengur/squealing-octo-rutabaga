@@ -26,6 +26,7 @@ gulp.task('html5-lint', function() {
 gulp.task('watch-src', function() {
   gulp.watch('src/js/*.js', ['js-lint', 'js-to-dist']);
   gulp.watch('src/css/*.css', ['css-to-dist']);
+  gulp.watch('src/css/*.woff', ['fonts-to-dist']);
   gulp.watch('src/*.html', ['html5-lint', 'html-to-dist']);
   gulp.watch('src/images/*', ['images-to-dist']);
   gulp.watch('src/assets/*', ['assets-to-dist']);
@@ -74,6 +75,11 @@ gulp.task('css-to-dist', function() {
     .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('fonts-to-dist', function() {
+  gulp.src('./src/css/*.woff')
+    .pipe(gulp.dest('./dist/css'));
+});
+
 gulp.task('images-to-dist', function() {
   gulp.src('./src/images/*')
     .pipe(gulp.dest('./dist/images'));
@@ -94,6 +100,7 @@ gulp.task('build', [
   'jquery-to-dist',
   'jquery-cycle-to-dist',
   'css-to-dist',
+  'fonts-to-dist',
   'images-to-dist',
   'assets-to-dist',
   'mithril-to-dist',
