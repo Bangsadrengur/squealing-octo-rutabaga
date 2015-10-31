@@ -1,18 +1,14 @@
-compiler:
-  - gcc
-  - clang
-install:
-- if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+node_js:
+- '4.1'
+sudo: false
+env:
+  - CXX=g++-4.8
 addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - gcc-4.8
     - g++-4.8
-    - clanglanguage: node_js
-node_js:
-- '4.1'
 before_script:
 - gulp build
 before_deploy:
