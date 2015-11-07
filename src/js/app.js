@@ -399,13 +399,13 @@ var Myndir = {
   },
   view: function() {
     return m('div[class="row"]', [
-      m('div[class="col-md-1"]', {id: 'fyrri-mynd'}, [
+      m('div[class="col-md-1 hidden-xs"]', {id: 'fyrri-mynd'}, [
         m('button[class="btn btn-default"]', [
           m('span[class="glyphicon glyphicon-menu-left"]')
         ]),
       ]),
       m(
-        'div[class="col-md-10"]',
+        'div[class="col-md-10 col-xs-12"]',
         {id: 'myndarammi'},
         m.component(
           Images,
@@ -415,7 +415,7 @@ var Myndir = {
           }
         )
       ),
-      m('div[class="col-md-1"]', {id: 'naesta-mynd'}, [
+      m('div[class="col-md-1 hidden-xs"]', {id: 'naesta-mynd'}, [
         m('button[class="btn btn-default"]', [
           m('span[class="glyphicon glyphicon-menu-right"]')
         ]),

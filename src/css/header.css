@@ -18,8 +18,8 @@
 
 #navbar-logo
 {
-  height: 25px;
+  height: 50px;
   /* IE: Removes blue border around image links */
   text-decoration: none;
-  border: 0px;
+  margin-top: -15px;
 }
