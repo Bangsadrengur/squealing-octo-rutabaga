@@ -1,17 +1,25 @@
 #header
 {
-    display: block;
-    background-color: #d47618;
-    height: 230px;
+  display: block;
+  background-color: #d47618;
+  height: 230px;
 }
 
-#logo
+#big-logo
 {
-    height: 230px;
-    float: left;
-    position: relative;
-    left: 100px;
-    /* IE: Removes blue border around image links */
-    text-decoration: none;
-    border: 0px;
+  height: 230px;
+  float: left;
+  position: relative;
+  left: 100px;
+  /* IE: Removes blue border around image links */
+  text-decoration: none;
+  border: 0px;
+}
+
+#navbar-logo
+{
+  height: 25px;
+  /* IE: Removes blue border around image links */
+  text-decoration: none;
+  border: 0px;
 }
