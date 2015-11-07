@@ -2,6 +2,20 @@ var gulp = require('gulp');
 var html5Lint = require('gulp-html5-lint');
 var del = require('del');
 var eslint = require('gulp-eslint');
+var karmaServer = require('karma').Server;
+
+gulp.task('test', function(done) {
+  new karmaServer({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
+
+gulp.task('tdd', function(done) {
+  new karmaServer({
+    configFile: __dirname + '/karma.conf.js'
+  }, done).start();
+});
 
 gulp.task('js-lint', function () {
   return gulp.src(['src/js/*.js'])
@@ -107,7 +121,7 @@ gulp.task('build', [
   'bootstrap-to-dist'
 ]);
 
-gulp.task('watch', ['watch-src']);
+gulp.task('watch', ['tdd', 'watch-src']);
 
 gulp.task('default', function() {
 });
