@@ -1,22 +1,22 @@
-// Todo: This probably belongs somewhere else
-initPages();
+var m = require('mithril');
+var pages = require('./pages');
 
 m.route.mode = "hash";
 
 m.route(document.getElementById("content"), "/", {
-  "/": Home,
-  "/umsokn": Umsokn,
-  "/um_skolann": UmSkolann,
-  "/fyrirkomulag_kennslu": FyrirkomulagK,
-  "/suzuki_adferdin": SuzukiAdferdin,
-  "/myndir": Myndir
+  "/": pages.Home,
+  "/umsokn": pages.Umsokn,
+  "/um_skolann": pages.UmSkolann,
+  "/fyrirkomulag_kennslu": pages.FyrirkomulagK,
+  "/suzuki_adferdin": pages.SuzukiAdferdin,
+  "/myndir": pages.Myndir
 });
 
 m.mount(
   document.querySelector('nav'),
   {
     view: function() {
-      return m.component(Nav, {pages: pages});
+      return m.component(pages.Nav, {pages: pages.pages});
     }
   }
 );
@@ -26,10 +26,10 @@ m.render(
   {
     view: function() {
       return m.component(
-        Images,
+        pages.Images,
         {
-          slideshowConf: headerSlideshowConf,
-          images: images
+          slideshowConf: pages.headerSlideshowConf,
+          images: pages.images
         }
       );
     }
