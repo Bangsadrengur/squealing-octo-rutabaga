@@ -1,5 +1,5 @@
 var m = require('mithril');
-var images = require('../config/images.json');
+var images = require('./images');
 
 // MODEL -----------------------------------------------------------------------
 //

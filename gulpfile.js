@@ -5,6 +5,7 @@ var eslint = require('gulp-eslint');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var gutil = require('gulp-util');
+var brfs = require('brfs');
 
 gulp.task('js-lint', function () {
   return gulp.src(['src/js/*.js'])
@@ -21,6 +22,7 @@ gulp.task('js-lint', function () {
 
 gulp.task('js', function() {
   return browserify('./src/js/app.js').
+    transform(brfs).
     bundle().
     on('error', function (e) {}).
     pipe(source('bundle.js')).
