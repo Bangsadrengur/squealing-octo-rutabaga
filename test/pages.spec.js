@@ -1,7 +1,9 @@
-var pages = require('../src/js/pages');
-
 describe('pages', function() {
+  beforeEach(function() {
+    this.pages = require('../src/js/pages');
+  });
+
   it('should have a Home page', function() {
-    expect(pages.Home).toBeDefined();
+    expect(this.pages.Home).toBeDefined();
   });
 });
