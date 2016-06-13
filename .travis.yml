@@ -24,4 +24,5 @@ deploy:
   app:
     develop: stormy-caverns-1711
     organize-images: stormy-caverns-1711
+    revise-images: stormy-caverns-1711
   skip_cleanup: true
