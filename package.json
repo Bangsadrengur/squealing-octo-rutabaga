@@ -28,6 +28,7 @@
     "express": "^4.13.3"
   },
   "devDependencies": {
+    "brfs": "^1.4.3",
     "browserify": "^13.0.1",
     "del": "^2.0.2",
     "gulp": "^3.9.0",

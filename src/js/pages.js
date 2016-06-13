@@ -1,4 +1,5 @@
 var m = require('mithril');
+var images = require('./images');
 
 // MODEL -----------------------------------------------------------------------
 //
@@ -39,32 +40,6 @@ var setActiveNavTo = function(page) {
   pages[page].span(true);
 };
 
-var images = {
-  'alt-text': "Mynd úr starfinu",
-  'file-names': [
-    "IMG_6530.jpg",
-    "IMG_6537.jpg",
-    "IMG_6551.jpg",
-    "IMG_6603.jpg",
-    "IMG_6615.jpg",
-    "IMG_6643.jpg",
-    "IMG_6666.jpg",
-    "IMG_6689.jpg",
-    "IMG_6702.jpg",
-    "IMG_6716.jpg",
-    "IMG_6739.jpg",
-    "image_1.jpg",
-    "image_2.jpg",
-    "image_3.jpg",
-    "image_4.jpg",
-    "image_5.jpg",
-    "image_6.jpg",
-    "image_7.jpg",
-    "image_8.jpg",
-    "image_9.jpg",
-    "image_10.jpg"
-  ]
-};
 // MODEL ENDS ------------------------------------------------------------------
 
 // Widget for right side of screen displaying "Frístundakortið"

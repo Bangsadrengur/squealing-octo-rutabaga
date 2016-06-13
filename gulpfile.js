@@ -5,6 +5,7 @@ var eslint = require('gulp-eslint');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var gutil = require('gulp-util');
+var brfs = require('brfs');
 
 gulp.task('js-lint', function () {
   return gulp.src(['src/js/*.js'])
@@ -21,6 +22,7 @@ gulp.task('js-lint', function () {
 
 gulp.task('js', function() {
   return browserify('./src/js/app.js').
+    transform(brfs).
     bundle().
     on('error', function (e) {}).
     pipe(source('bundle.js')).
@@ -34,35 +36,36 @@ gulp.task('html5-lint', function() {
 
 gulp.task('watch-src', function() {
   gulp.watch('src/js/*.js', ['js-lint', 'js']);
-  gulp.watch('src/css/*.css', ['css-to-dist']);
-  gulp.watch('src/css/*.woff', ['fonts-to-dist']);
-  gulp.watch('src/*.html', ['html5-lint', 'html-to-dist']);
-  gulp.watch('src/images/*', ['images-to-dist']);
-  gulp.watch('src/assets/*', ['assets-to-dist']);
+  gulp.watch('src/css/*.css', ['css']);
+  gulp.watch('src/css/*.woff', ['fonts']);
+  gulp.watch('src/*.html', ['html5-lint', 'html']);
+  gulp.watch('src/images/*', ['images']);
+  gulp.watch('src/assets/*', ['assets']);
 });
 
-gulp.task('html-to-dist', function() {
-  gulp.src('./src/**/*.html')
+gulp.task('html', function() {
+  return gulp.src('./src/**/*.html')
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('css-to-dist', function() {
-  gulp.src('./src/css/*.css')
+gulp.task('css', function() {
+  return gulp.src('./src/css/*.css')
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('fonts-to-dist', function() {
-  gulp.src('./src/css/*.woff')
+gulp.task('fonts', function() {
+  return gulp.src('./src/css/*.woff')
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('images-to-dist', function() {
-  gulp.src('./src/images/*')
+gulp.task('images', function() {
+  var basepath = './src/images';
+  return gulp.src([ basepath + '/showcase/*', basepath + '/layout/*' ])
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('assets-to-dist', function() {
-  gulp.src('./src/assets/*')
+gulp.task('assets', function() {
+  return gulp.src('./src/assets/*')
     .pipe(gulp.dest('./dist'));
 });
 
@@ -72,11 +75,11 @@ gulp.task('clean', function() {
 
 gulp.task('build', [
   'js',
-  'html-to-dist',
-  'css-to-dist',
-  'fonts-to-dist',
-  'images-to-dist',
-  'assets-to-dist'
+  'html',
+  'css',
+  'fonts',
+  'images',
+  'assets'
 ]);
 
 gulp.task('watch', ['watch-src']);
