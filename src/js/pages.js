@@ -1,5 +1,6 @@
 var m = require('mithril');
 var images = require('./images');
+var Images = require('./components/Images');
 
 // MODEL -----------------------------------------------------------------------
 //
@@ -402,51 +403,15 @@ var mainSlideshowConf = function() {
     next: "#naesta-mynd",
     swipe: true,
     loader: true,
-    progressive: '#slides',
+    progressive: global.slides,
   });
 };
 
 var headerSlideshowConf = function() {
   $('#header .cycle-slideshow').cycle({
     centerHorz: true,
+    progressive: global.slides,
   });
-};
-
-var Images = {
-  view: function(ctrl, args) {
-    return m(
-      'div',
-      {
-        class: "cycle-slideshow",
-        'data-cycle-loader': true,
-        'data-cycle-progressive': '#slides',
-        config: args.slideshowConf
-      },
-      [
-        m('img', { src: args.images['file-names'][0], alt: args.images['alt-text'] }),
-        m(
-          'script',
-          {
-            id: 'slides',
-            type: 'text/cycle'
-          },
-          [
-            m.trust('['),
-            args.images['file-names'].map(function(imageFile) {
-              return m(
-                'img',
-                {
-                  src: imageFile,
-                  alt: args.images['alt-text']
-                }
-              );
-            }),
-            m.trust(']')
-          ]
-        )
-      ]
-    );
-  }
 };
 
 var Nav = {
