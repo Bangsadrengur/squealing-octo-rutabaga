@@ -400,7 +400,9 @@ var mainSlideshowConf = function() {
     centerVert: true,
     prev: "#fyrri-mynd",
     next: "#naesta-mynd",
-    swipe: true
+    swipe: true,
+    loader: true,
+    progressive: '#slides',
   });
 };
 
@@ -413,19 +415,36 @@ var headerSlideshowConf = function() {
 var Images = {
   view: function(ctrl, args) {
     return m(
-      'div[class="cycle-slideshow"]',
+      'div',
       {
+        class: "cycle-slideshow",
+        'data-cycle-loader': true,
+        'data-cycle-progressive': '#slides',
         config: args.slideshowConf
       },
-      args.images['file-names'].map(function(imageFile) {
-        return m(
-          'img',
+      [
+        m('img', { src: args.images['file-names'][0], alt: args.images['alt-text'] }),
+        m(
+          'script',
           {
-            src: imageFile,
-            alt: args.images['alt-text']
-          }
-        );
-      })
+            id: 'slides',
+            type: 'text/cycle'
+          },
+          [
+            m.trust('['),
+            args.images['file-names'].map(function(imageFile) {
+              return m(
+                'img',
+                {
+                  src: imageFile,
+                  alt: args.images['alt-text']
+                }
+              );
+            }),
+            m.trust(']')
+          ]
+        )
+      ]
     );
   }
 };
