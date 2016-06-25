@@ -1,5 +1,6 @@
 var m = require('mithril');
 var images = require('./images');
+var Images = require('./components/Images');
 
 // MODEL -----------------------------------------------------------------------
 //
@@ -75,7 +76,7 @@ var Home = {
         m('h2', 'Velkomin á heimasíðu Suzukipíanóskólans'),
         m('img', {
           id: "frontpage-img",
-          src: "IMG_6551.jpg",
+          src: "03.jpg",
           alt:"Mynd úr starfinu"
         })
       ]),
@@ -400,34 +401,17 @@ var mainSlideshowConf = function() {
     centerVert: true,
     prev: "#fyrri-mynd",
     next: "#naesta-mynd",
-    swipe: true
+    swipe: true,
+    loader: true,
+    progressive: global.slides,
   });
 };
 
 var headerSlideshowConf = function() {
   $('#header .cycle-slideshow').cycle({
     centerHorz: true,
+    progressive: global.slides,
   });
-};
-
-var Images = {
-  view: function(ctrl, args) {
-    return m(
-      'div[class="cycle-slideshow"]',
-      {
-        config: args.slideshowConf
-      },
-      args.images['file-names'].map(function(imageFile) {
-        return m(
-          'img',
-          {
-            src: imageFile,
-            alt: args.images['alt-text']
-          }
-        );
-      })
-    );
-  }
 };
 
 var Nav = {
