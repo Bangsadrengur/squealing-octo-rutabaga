@@ -76,7 +76,7 @@ var Home = {
         m('h2', 'Velkomin á heimasíðu Suzukipíanóskólans'),
         m('img', {
           id: "frontpage-img",
-          src: "03.jpg",
+          src: "6-0.jpg",
           alt:"Mynd úr starfinu"
         })
       ]),
