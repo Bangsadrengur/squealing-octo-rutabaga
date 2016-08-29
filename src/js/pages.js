@@ -335,24 +335,24 @@ var SuzukiAdferdin = {
         ]),
         m('h3', 'Asia Suzuki Association'),
         m('p', 'Asía (fyrir utan Japan)'),
-        m('a', {href: "www.asiasuzuki.org"}, 'www.asiasuzuki.org'),
+        m('a', {href: "//www.asiasuzuki.org"}, 'www.asiasuzuki.org'),
         m('h3', 'European Suzuki Association (ESA)'),
         m('p', 'Evrópa, Afríka og Miðausturlönd'),
-        m('a', {href: "www.europeansuzuki.org"}, 'www.europeansuzuki.org'),
+        m('a', {href: "//www.europeansuzuki.org"}, 'www.europeansuzuki.org'),
         m('h3', 'Pan-Pacific Suzuki Association (PPSA)'),
         m('p', 'Ástralía, Nýja Sjáland og Kyrrahafseyjar'),
-        m('a', {href: "www.suzukimusic.com.au"}, 'www.suzukimusic.com.au'),
+        m('a', {href: "//www.suzukimusic.com.au"}, 'www.suzukimusic.com.au'),
         m('h3', 'Suzuki Association of the Americas (SAA)'),
         m('p', 'Norður og Suður Ameríka'),
         m(
-          'a', {href: "www.suzukiassociation.org"}, 'www.suzukiassociation.org'
+          'a', {href: "//www.suzukiassociation.org"}, 'www.suzukiassociation.org'
         ),
         m('h3', 'Talent Education Research Institute (TERI)'),
         m('p', 'Japan'),
-        m('a', {href: "www.suzukimethod.or.jp"}, 'www.suzukimethod.or.jp'),
+        m('a', {href: "//www.suzukimethod.or.jp"}, 'www.suzukimethod.or.jp'),
         m('h3', 'Alþjóða Suzukisambandið (International Suzuki Association)'),
         m(
-          'a', {href: "www.internationalsuzuki.org"},
+          'a', {href: "//www.internationalsuzuki.org"},
           'www.internationalsuzuki.org'
         )
       ]),
