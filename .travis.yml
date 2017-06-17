@@ -23,5 +23,5 @@ deploy:
     secure: ECnQqn/L1MzL7ePifqEVbflcfoCyYvgQ374P/YnsTQx6Pj1mpuQD8Ty/f5yxe2fQQrXhJWyQ99KKBvpmjIzjaV2Z3ye5W5diHEe9u8d94EL65a0pAWkZ9j/a4jVNVBbo+VMJjrD14FmI/3iuVosa9/S0F2byB0SBl6wYSLtHtNP3DuerfOnkKkw2++Ngx2LtiydxAggFVnN6kERc/avmh8i55y/xgbMMjdvzqwq+4+zRm/1vydMoSOzzmtjl8Jc5k8CMndzOoiAMXtPl0qTTzR4whlVO5vp4cHsSfOtmZhp4BuwbkbkTvsiG9Y5tz+UBNDgl9DD4aF+k5VqppGL+iiSakZRrUKB3HWNp7YAnILufzdXVZld4xNpb7mMoBo7WpVq1aMLc2kpho023UqG0O/d+RBNGUXLnweAvVYgeXf4p4Bzu3XtPcwvgFo0ev/ZlEa5xutOhou3lXznRr31TmEIzkUS/Iy8SlvH8FHWH5o2VShK9f/bC2p+xWxgKCd/D/yA/GeTYehGjDQoDBYQ+rA5+5GfB4sgl7F7VAbpWvw7qRStC59KUAtaNAbVhWx4H64sp3VwA6rURp7oTGnyVZB+x612jTENAF6z1Yrjk8dPBNxP0AUFjPYYQFVbo629zm4xUuagSgzKflr0y35sYiIYBss2CC2I93j5oFk1ELb8=
   app:
     develop: stormy-caverns-1711
-    fix-links-minimal: stormy-caverns-1711
+    circle-logo: stormy-caverns-1711
   skip_cleanup: true
